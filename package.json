@@ -1,0 +1,24 @@
+{
+  "name": "category-theory-for-programmers",
+  "version": "1.0.0",
+  "description": "Exercises in JavaScript for the book Category Theory for Programmers by Bartosz Milewski",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape *.js | tap-nyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-rampage/category-theory-for-programmers.git"
+  },
+  "author": "mr-rampage",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/mr-rampage/category-theory-for-programmers/issues"
+  },
+  "homepage": "https://github.com/mr-rampage/category-theory-for-programmers#readme",
+  "devDependencies": {
+    "fast-check": "^2.16.0",
+    "tap-nyan": "^1.1.0",
+    "tape": "^5.2.2"
+  }
+}
