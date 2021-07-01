@@ -27,7 +27,7 @@ const right = either(EMPTY);
 /**
  * Gets the value from an either by matching LEFT or RIGHT
  */
-const match = leftOrRight => either => Reflect.has(either, leftOrRight) ? either[leftOrRight] : EMPTY;
+const match = leftOrRight => either => Reflect.get(either, leftOrRight);
 
 test('either construction', assert => {
   assert.plan(2);
@@ -66,9 +66,7 @@ test("coproduct with map", assert => {
   assert.doesNotThrow(() => {
     fc.assert(
       fc.property(fc.oneof(fc.boolean(), fc.integer()), x =>
-        Number.isInteger(x)
-          ? m(eitherIntBool(x)) === i(x)
-          : m(eitherIntBool(x)) === j(x)
+          m(eitherIntBool(x)) === (Number.isInteger(x) ? i(x) : j(x))
       )
     )
   }, 'should factorize i and j.');
